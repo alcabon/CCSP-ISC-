@@ -827,3 +827,34 @@ Voici une **vue d’ensemble d’expert IT** sur ces **quatre technologies majeu
 * **IoT** : sécuriser les terminaux, le réseau et les flux de données.
 * **DevSecOps** : intégrer la sécurité dès la conception pour toutes les autres technologies.
 * **Containers** : garantir l’isolation et la sécurité du cycle de vie des images et du cluster (ex. Kubernetes).
+
+  ---
+
+  Voici une **synthèse des principales considérations partagées dans le cloud** – souvent appelées *cloud shared considerations* – avec une **analyse experte sécurité IT** :
+
+---
+
+| Thème                                                | Définition                                                                                                                                         | Risques / Défis                                                                                                                                 | Bonnes pratiques (vue expert)                                                                                                                                                                                               |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interoperability (Interopérabilité)**              | Capacité des services cloud de différents fournisseurs ou systèmes à fonctionner ensemble, échanger des données et des applications sans friction. | • Incompatibilités entre API ou formats de données.<br>• Dépendance excessive à un écosystème unique (vendor lock-in).                          | • Utiliser des standards ouverts (ex. OpenAPI, OIDC, SAML).<br>• Concevoir des architectures multi-cloud ou hybrides dès le départ.<br>• Tester la compatibilité lors des changements de version.                           |
+| **Portability (Portabilité)**                        | Facilité à déplacer applications, données et charges de travail d’un environnement cloud à un autre ou vers un datacenter on-premise.              | • Coûts ou complexité de migration.<br>• Différences de services managés ou d’outils natifs.                                                    | • Conteneuriser les applications (Docker/Kubernetes).<br>• Stocker les données dans des formats standards (ex. Parquet, JSON).<br>• Éviter les services propriétaires trop spécifiques quand la réversibilité est critique. |
+| **Reversibility (Réversibilité)**                    | Capacité à quitter un fournisseur cloud et récupérer l’intégralité de ses données et applications dans un délai et un format convenus.             | • Données captives dans un format propriétaire.<br>• SLA insuffisamment précis.<br>• Risque de perte ou d’altération de données.                | • Inclure dans le contrat/SLA des clauses de restitution des données (formats, délais).<br>• Tester périodiquement les procédures d’export et de restauration.                                                              |
+| **Availability (Disponibilité)**                     | Taux de service opérationnel et accessible selon les SLA (ex. 99,99 %).                                                                            | • Pannes régionales, attaques DDoS, erreurs de configuration.                                                                                   | • Choisir des régions multi-AZ / multi-région.<br>• Activer la tolérance aux pannes (load balancing, auto-scaling).<br>• Mettre en place un plan de reprise d’activité (DRP/BCP).                                           |
+| **Audibility (Auditabilité)**                        | Capacité à prouver, via journaux et contrôles, la conformité aux politiques de sécurité et aux obligations réglementaires.                         | • Journaux incomplets ou non intègres.<br>• Difficulté à corréler les logs multi-cloud.                                                         | • Activer et centraliser les logs (ex. CloudTrail, Azure Monitor, GCP Audit Logs).<br>• Intégrer les logs dans un SIEM.<br>• Mettre en place des revues d’accès régulières.                                                 |
+| **Regulatory Compliance (Conformité réglementaire)** | Respect des lois et normes applicables (RGPD, HIPAA, PCI-DSS, ISO 27001…).                                                                         | • Non-conformité entraînant sanctions financières ou réputationnelles.<br>• Législations différentes selon les régions (ex. Cloud Act vs RGPD). | • Choisir des fournisseurs certifiés (ISO, SOC2).<br>• Mettre en œuvre le chiffrement (CMK/CPK).<br>• Localiser les données conformément aux exigences légales.                                                             |
+
+---
+
+### 🔑 Points d’expert
+
+1. **Ces considérations sont “partagées”** car elles impliquent à la fois le **fournisseur (CSP)** et le **consommateur de cloud** : la responsabilité est conjointe.
+2. **Interopérabilité & portabilité** réduisent le **vendor lock-in** et facilitent une stratégie multi-cloud ou hybride.
+3. **Réversibilité** doit être définie **contractuellement** dès la négociation du SLA.
+4. **Disponibilité & auditabilité** sont la base de la **confiance et de la conformité**.
+5. **Compliance** : les réglementations évoluent ; la veille juridique et la gouvernance interne sont aussi importantes que les capacités techniques.
+
+---
+
+✅ **Résumé** :
+Pour un architecte sécurité, ces six aspects sont **critiques à intégrer dès la phase de conception** d’une stratégie cloud afin d’assurer **résilience, conformité et indépendance** vis-à-vis du fournisseur.
+
