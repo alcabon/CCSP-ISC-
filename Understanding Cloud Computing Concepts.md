@@ -788,3 +788,42 @@ Here’s a **clear expert-level overview** of **Orchestration** and **Infrastruc
 
 Together they enable **secure, auditable, and automated infrastructure management**, a cornerstone of modern **DevSecOps** practices.
 
+---
+
+Voici une **vue d’ensemble d’expert IT** sur ces **quatre technologies majeures** et leur **impact en matière de sécurité** :
+
+---
+
+| Technologie                      | Définition                                                                                                                         | Cas d’usage typiques                                                                              | Enjeux & bonnes pratiques de sécurité                                                                                                                                                                                                                                                                  |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Artificial Intelligence (AI)** | Discipline informatique qui permet aux systèmes d’apprendre, raisonner et prendre des décisions (Machine Learning, Deep Learning). | Analyse prédictive, chatbots, détection de fraude, maintenance prédictive, génération de contenu. | - **Protection des données d’entraînement** (données sensibles, RGPD).<br>- **Sécurité des modèles** (attaques adversariales, vol de modèles).<br>- Gouvernance de l’IA : traçabilité, auditabilité des décisions (IA responsable).                                                                    |
+| **Internet of Things (IoT)**     | Réseau d’objets physiques connectés (capteurs, caméras, équipements industriels) échangeant des données.                           | Domotique, smart cities, santé connectée, industrie 4.0, véhicules autonomes.                     | - **Durcissement des terminaux** (firmware, patching).<br>- **Segmentation réseau stricte** (VLAN, micro-segmentation).<br>- Chiffrement des communications (TLS, VPN).<br>- Gestion d’identité/PKI pour chaque appareil.                                                                              |
+| **DevSecOps**                    | Extension du DevOps intégrant la **sécurité dès le début du cycle de développement** (« shift-left security »).                    | Intégration continue (CI/CD) avec contrôle de code, tests de sécurité automatisés.                | - Intégrer des **scans de vulnérabilités** (SAST/DAST) dans les pipelines.<br>- Automatiser la gestion des secrets (Vault, KMS).<br>- Mise en place de politiques « Security as Code ».                                                                                                                |
+| **Containers**                   | Méthode de virtualisation légère : empaqueter une application et ses dépendances dans un environnement isolé (ex. Docker).         | Microservices, déploiements multi-cloud, CI/CD rapide, scalabilité Kubernetes.                    | - **Gestion des images** : utiliser des images officielles, scanner les vulnérabilités.<br>- **Isolation renforcée** : configurations de namespaces et cgroups.<br>- **Kubernetes** : contrôler l’accès au cluster (RBAC), sécuriser l’API server, appliquer des politiques réseau (Network Policies). |
+
+---
+
+### 🔑 Points clés transverses
+
+1. **Convergence** : Ces technologies sont souvent combinées :
+
+   * IA embarquée dans des environnements IoT,
+   * Containers orchestrés par Kubernetes avec pipelines DevSecOps.
+
+2. **Surface d’attaque élargie** :
+
+   * Plus d’API, plus d’appareils, plus de données.
+   * Exige une **gouvernance et un monitoring continus** (SIEM, SOC, IAM).
+
+3. **Culture sécurité intégrée** :
+
+   * **DevSecOps** est le fil conducteur : automatiser la sécurité, réduire l’erreur humaine, appliquer le principe du moindre privilège dans tous les environnements.
+
+---
+
+✅ **Résumé expert** :
+
+* **AI** : exploiter la donnée avec contrôle éthique et protection contre les attaques adversariales.
+* **IoT** : sécuriser les terminaux, le réseau et les flux de données.
+* **DevSecOps** : intégrer la sécurité dès la conception pour toutes les autres technologies.
+* **Containers** : garantir l’isolation et la sécurité du cycle de vie des images et du cluster (ex. Kubernetes).
