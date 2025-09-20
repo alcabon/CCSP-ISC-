@@ -286,3 +286,80 @@ Niveau de sécurité ↓
 Si vous voulez, je peux **créer une vraie version graphique en image**, avec **couleurs, icônes de cloud, flèches de sécurité et logos des fournisseurs**, prête pour présentation PowerPoint ou documentation de conseil IT.
 
 Souhaitez-vous que je fasse cette version graphique ?
+
+---
+
+Parfait ! Nous allons intégrer **“Data”** dans le tableau de responsabilité partagée. Voici la version mise à jour et complète pour **IaaS, PaaS et SaaS**, avec “Data” ajouté.
+
+---
+
+| Contrôle / Domaine                     | IaaS                         | PaaS     | SaaS     | Remarques / Explication expert IT                                                                                                                                          |
+| -------------------------------------- | ---------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Accounts & Access**                  | Consumer                     | Consumer | Consumer | Gestion des utilisateurs, rôles et permissions (IAM). CSP fournit l’infrastructure d’authentification mais la configuration reste client.                                  |
+| **IAM (Identity & Access Management)** | Shared                       | Shared   | Shared   | Dans IaaS et PaaS, le client configure IAM pour ses ressources. Dans SaaS, le fournisseur gère IAM de base, mais le client gère comptes utilisateurs et MFA.               |
+| **Data**                               | Consumer                     | Shared   | Shared   | IaaS : le client contrôle chiffrement, stockage et sauvegardes. PaaS/SaaS : CSP protège les données mais le client reste responsable des droits d’accès et classification. |
+| **Infrastructure Security**            | CSP (HW) / Consumer (config) | CSP      | CSP      | IaaS : CSP sécurise l’infrastructure physique et réseau, client sécurise OS, applications et VMs. PaaS/SaaS : CSP gère toute l’infra.                                      |
+| **Application Security**               | Consumer                     | Consumer | CSP      | IaaS/PaaS : le client développe et sécurise ses applications. SaaS : le fournisseur sécurise l’application.                                                                |
+| **Overlay Network Security**           | Shared                       | CSP      | CSP      | IaaS : le client configure pare-feu, VPN et VPC. PaaS/SaaS : CSP gère les réseaux virtuels internes.                                                                       |
+| **Operating System Security**          | Consumer                     | CSP      | CSP      | IaaS : le client installe correctifs et configure OS. PaaS/SaaS : CSP gère OS, middleware et runtime.                                                                      |
+| **Hypervisor Security**                | CSP                          | CSP      | CSP      | Toujours sous responsabilité du fournisseur.                                                                                                                               |
+| **Underlay Network Security**          | CSP                          | CSP      | CSP      | Sécurité du réseau physique et routage géré par CSP.                                                                                                                       |
+| **Physical Device Security**           | CSP                          | CSP      | CSP      | Matériel serveur, stockage et périphériques protégés par le CSP.                                                                                                           |
+| **Physical Data Center Security**      | CSP                          | CSP      | CSP      | Contrôle physique, accès aux locaux et protections environnementales assurés par le fournisseur.                                                                           |
+
+---
+
+### ✅ Points clés avec **Data** :
+
+1. **IaaS : le client est maître de ses données** → chiffrement, sauvegardes et classification critiques.
+2. **PaaS et SaaS : responsabilité partagée** → CSP sécurise stockage et accès réseau, mais le client doit gérer **droits d’accès, chiffrement applicatif et conformité réglementaire** (ex. RGPD, HIPAA).
+3. La **mauvaise gestion des données** reste la faille principale, même si CSP assure le reste.
+
+---
+
+Si vous voulez, je peux maintenant créer **une version graphique type matrice visuelle** avec toutes les responsabilités codées par couleur (**CSP = bleu, Consumer = vert, Shared = jaune**), ce qui est parfait pour **présentation ou formation**.
+
+Voulez que je fasse cette version graphique ?
+
+---
+
+Parfait ! Voici une **proposition graphique sous forme de matrice visuelle**, codée par couleurs pour distinguer les responsabilités entre **CSP**, **Consumer** et **Shared**, intégrant **tous les contrôles y compris “Data”**.
+
+---
+
+### Légende des couleurs
+
+* 🟦 **CSP** : Cloud Service Provider (responsabilité du fournisseur)
+* 🟩 **Consumer** : Client (responsabilité du consommateur)
+* 🟨 **Shared** : Responsabilité partagée
+
+---
+
+| Contrôle / Domaine                     | IaaS    | PaaS | SaaS |
+| -------------------------------------- | ------- | ---- | ---- |
+| **Accounts & Access**                  | 🟩      | 🟩   | 🟩   |
+| **IAM (Identity & Access Management)** | 🟨      | 🟨   | 🟨   |
+| **Data**                               | 🟩      | 🟨   | 🟨   |
+| **Infrastructure Security**            | 🟦 / 🟩 | 🟦   | 🟦   |
+| **Application Security**               | 🟩      | 🟩   | 🟦   |
+| **Overlay Network Security**           | 🟨      | 🟦   | 🟦   |
+| **Operating System Security**          | 🟩      | 🟦   | 🟦   |
+| **Hypervisor Security**                | 🟦      | 🟦   | 🟦   |
+| **Underlay Network Security**          | 🟦      | 🟦   | 🟦   |
+| **Physical Device Security**           | 🟦      | 🟦   | 🟦   |
+| **Physical Data Center Security**      | 🟦      | 🟦   | 🟦   |
+
+---
+
+### Interprétation experte
+
+1. **IaaS : contrôle client maximal** → sécurité de l’OS, applications et données critiques sous responsabilité du consommateur.
+2. **PaaS : CSP sécurise OS et middleware** → client se concentre sur code, accès et données.
+3. **SaaS : client gère essentiellement comptes, accès et données** → le fournisseur assure tout le reste.
+4. **Shared responsibilities** (IAM, Overlay Network, Data en PaaS/SaaS) nécessitent une **bonne gouvernance et surveillance** pour éviter les failles.
+
+---
+
+Si vous voulez, je peux également créer une **vraie image graphique style diagramme**, avec **couleurs, icônes cloud et flèches** pour rendre cette matrice **visuellement prête à présenter** dans une formation ou un guide IT.
+
+Voulez que je fasse cette version image ?
