@@ -576,3 +576,47 @@ Voici une **synthèse claire** des **trois grands types de stockage cloud** — 
 * **Object** = stockage massivement scalable pour données non structurées et accès via API.
   ➡️ Le choix dépend des besoins de **performance, scalabilité et type d’accès**, mais **les bonnes pratiques de chiffrement et d’IAM restent transverses**.
 
+---
+
+Voici une **synthèse claire** des deux grands **types d’hyperviseurs de virtualisation** (*Type-1* et *Type-2*), avec une **vue d’expert IT sécurité** :
+
+---
+
+## 🏷️ Définition rapide
+
+Un **hyperviseur** est un logiciel qui permet de faire fonctionner plusieurs machines virtuelles (VM) sur une même machine physique en isolant les ressources matérielles.
+
+---
+
+| **Type d’hyperviseur**  | **Description**                                                                                                                     | **Exemples courants**                                                                 | **Avantages**                                                                                | **Points de vigilance sécurité**                                                                                                              |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Type-1 (bare metal)** | S’exécute **directement sur le matériel physique** sans système d’exploitation hôte. L’OS des VM tourne au-dessus de l’hyperviseur. | VMware ESXi, Microsoft Hyper-V, KVM, Xen, Oracle VM                                   | - Meilleure performance et scalabilité.<br>- Plus sécurisé car moins de couches logicielles. | - Patcher régulièrement (vulnérabilités hyperviseur).<br>- Contrôler l’accès d’administration (MFA).<br>- Surveiller le trafic de management. |
+| **Type-2 (hosted)**     | S’exécute **au-dessus d’un système d’exploitation hôte** (Windows, Linux, macOS).                                                   | VMware Workstation, Oracle VirtualBox, Parallels Desktop, Hyper-V en mode « Client ». | - Simplicité d’installation.<br>- Idéal pour postes de travail, test et développement.       | - Dépend de la sécurité de l’OS hôte (patchs, antivirus).<br>- Risque accru d’attaque si l’hôte est compromis.                                |
+
+---
+
+### 🔑 Différences clés
+
+| Critère       | Type-1                                     | Type-2                                |
+| ------------- | ------------------------------------------ | ------------------------------------- |
+| Emplacement   | Direct sur le hardware                     | Sur un OS hôte                        |
+| Usage typique | Datacenters, Cloud, serveurs de production | Postes de travail, lab, développement |
+| Performance   | Haute                                      | Moins élevée (overhead de l’OS hôte)  |
+| Sécurité      | Plus robuste                               | Dépend fortement de l’OS hôte         |
+
+---
+
+### 🛡️ Recommandations d’expert sécurité
+
+1. **Mise à jour régulière** : appliquer les correctifs de l’hyperviseur et de l’OS hôte (Type-2).
+2. **Isolation réseau** : séparer le réseau de gestion de l’hyperviseur du réseau de production.
+3. **Contrôle d’accès strict** : MFA, comptes limités, journalisation des accès.
+4. **Surveillance** : activer la journalisation et l’audit des événements liés aux VM et à l’hyperviseur.
+5. **Protection contre l’« escape » VM** : surveiller les vulnérabilités permettant à une VM de sortir de son isolation.
+
+---
+
+✅ **Résumé rapide**
+
+* **Type-1 (“bare metal”)** : idéal pour **clouds, data centers, production** – meilleure performance et sécurité.
+* **Type-2 (“hosted”)** : pratique pour **tests, développement, postes de travail** – mais **plus dépendant de l’OS hôte** en matière de sécurité.
