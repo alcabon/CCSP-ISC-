@@ -411,3 +411,41 @@ Parfait ! Intégrons ces **exemples concrets de sécurité** dans le cadre du **
 Si vous voulez, je peux **mettre à jour la matrice graphique précédente** en intégrant ces **exemples CMK/CPK et DoS/DDoS**, codés par couleur CSP / Client / Shared, pour avoir un **tableau complet de responsabilité pratique et visuel**.
 
 Voulez que je fasse cette version ?
+
+---
+
+Voici un **résumé structuré** des **quatre rôles définis par NIST** dans l’écosystème du cloud :
+
+---
+
+| Rôle                                                             | Définition                                                                                                                                                     | Responsabilités principales                                                                                                                                                                    | Exemple concret                                                               |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Cloud Consumer (Consommateur de cloud)**                       | Organisation ou individu qui utilise les services cloud (IaaS, PaaS, SaaS) fournis par un fournisseur.                                                         | - Choisir le type de service (IaaS, PaaS, SaaS).<br>- Gérer ses identités, accès et données.<br>- Configurer les services et assurer la conformité réglementaire (RGPD, HIPAA…).               | Une entreprise qui héberge ses applications sur AWS ou utilise Microsoft 365. |
+| **Cloud Service Provider (CSP – Fournisseur de services cloud)** | Entité qui fournit l’infrastructure, les plateformes ou les applications cloud.                                                                                | - Assurer la disponibilité, la résilience et la sécurité de l’infrastructure.<br>- Mettre en œuvre les SLA (Service Level Agreements).<br>- Gérer la sécurité physique, réseau et hyperviseur. | AWS, Microsoft Azure, Google Cloud Platform (GCP).                            |
+| **Cloud Auditor (Auditeur cloud)**                               | Tierce partie qui évalue la conformité et la sécurité des services cloud.                                                                                      | - Réaliser des audits de sécurité et de conformité.<br>- Évaluer la performance et le respect des normes (ISO 27001, SOC 2).<br>- Produire des rapports d’audit indépendants.                  | Cabinet d’audit qui vérifie qu’un CSP est conforme au RGPD ou SOC 2.          |
+| **Cloud Broker (Courtier cloud)**                                | Intermédiaire entre le consommateur et le fournisseur pour faciliter la sélection, la négociation et éventuellement l’intégration de plusieurs services cloud. | - Aider à choisir la meilleure offre cloud.<br>- Gérer l’interopérabilité ou la fédération multi-cloud.<br>- Optimiser les coûts et la gouvernance.                                            | Société de conseil qui agrège plusieurs offres (AWS + Azure) pour un client.  |
+
+---
+
+### 🔑 Points d’expert sécurité IT
+
+1. **Responsabilité partagée** :
+
+   * Le **Cloud Consumer** est responsable de ses données, de la configuration de sécurité et de la gestion des identités.
+   * Le **CSP** assure la sécurité physique, du réseau et de l’infrastructure.
+   * Le **Cloud Auditor** renforce la confiance et la conformité.
+   * Le **Cloud Broker** aide à gérer la complexité et les risques multi-cloud.
+
+2. **Importance de l’auditeur** : les certifications (ISO, SOC, PCI-DSS) proviennent souvent d’audits indépendants, ce qui rassure les consommateurs.
+
+3. **Broker et sécurité** : un courtier cloud doit vérifier que la fédération multi-cloud n’introduit pas de failles (IAM fédéré, chiffrement, logs).
+
+---
+
+💡 **Résumé visuel** :
+
+* **Consumer** : utilise et configure.
+* **Provider** : construit et sécurise l’infrastructure.
+* **Auditor** : contrôle la conformité.
+* **Broker** : conseille, intègre et optimise.
+
