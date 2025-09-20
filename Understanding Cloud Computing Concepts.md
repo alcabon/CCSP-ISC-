@@ -502,3 +502,35 @@ Conformément à la même architecture, NIST 500-292 réaffirme les **modèles d
 ➡️ Première publication : **2011** (National Institute of Standards and Technology, États-Unis).
 
 En résumé, **NIST 500-292** est le cadre de référence officiel qui **structure l’écosystème cloud** autour de ces cinq rôles et clarifie les responsabilités et les interactions entre eux.
+
+---
+
+Voici une **synthèse structurée des principaux composants de mise en réseau dans le cloud**, avec un regard **expert sécurité IT**, leurs **fonctions**, et les **points de vigilance sécurité** :
+
+---
+
+| Élément réseau cloud                                | Rôle / Fonction                                                                                                       | Exemple typique (AWS / Azure / GCP)                                                                                                  | Points de vigilance sécurité                                                                                                       |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Réseaux virtuels (subnets)**                      | Segmentation logique d’un réseau dans le cloud. Chaque sous-réseau (subnet) peut héberger des ressources différentes. | **AWS** : VPC & Subnets<br>**Azure** : Virtual Network (VNet) & Subnets<br>**GCP** : VPC & Subnets                                   | Bien définir les plages IP, isoler les environnements (prod, dev), appliquer le principe du moindre accès.                         |
+| **Pare-feux virtuels / ACL (Access Control Lists)** | Contrôlent le trafic entrant/sortant au niveau des sous-réseaux ou des interfaces réseau.                             | **AWS** : Network ACLs<br>**Azure** : Network Security Groups (NSG, en mode ACL)<br>**GCP** : Firewall Rules                         | Mettre en place des règles strictes (deny by default), surveiller les logs d’accès, éviter les règles trop larges.                 |
+| **Security Groups**                                 | Filtrent le trafic au niveau des instances/VMs, généralement stateful (gardent l’état de la connexion).               | **AWS** : Security Groups<br>**Azure** : NSG (mode stateful)<br>**GCP** : Firewall Rules (instance-level)                            | Limiter aux ports/protocoles strictement nécessaires, appliquer le principe du moindre privilège, revoir régulièrement les règles. |
+| **Pare-feux d’applications Web (WAF)**              | Protègent les applications Web contre les attaques de type OWASP Top 10 (SQLi, XSS…).                                 | **AWS** : AWS WAF<br>**Azure** : Azure Web Application Firewall (sur Application Gateway ou Front Door)<br>**GCP** : Cloud Armor WAF | Configurer les règles personnalisées, activer la journalisation, mettre à jour en fonction des nouvelles menaces.                  |
+| **Interfaces réseau virtuelles (vNICs)**            | Lient les machines virtuelles au réseau virtuel.                                                                      | **AWS** : Elastic Network Interface (ENI)<br>**Azure** : Network Interface (NIC)<br>**GCP** : Virtual NIC                            | Gérer les adresses IP et les droits d’attachement/détachement, surveiller les logs de trafic.                                      |
+| **Connexions directes vers on-premise**             | Liaisons dédiées entre le datacenter de l’entreprise et le cloud (VPN ou ligne dédiée).                               | **AWS** : Direct Connect<br>**Azure** : ExpressRoute<br>**GCP** : Cloud Interconnect                                                 | Chiffrer les flux (IPsec ou équivalent), surveiller la disponibilité, tester la redondance.                                        |
+| **Peering de réseaux virtuels**                     | Connexion privée entre deux réseaux virtuels dans un même cloud ou entre clouds.                                      | **AWS** : VPC Peering<br>**Azure** : VNet Peering<br>**GCP** : VPC Peering                                                           | Vérifier les routes et les règles de pare-feu, limiter les flux non nécessaires, surveiller les logs.                              |
+
+---
+
+### 🔑 Conseils d’expert sécurité
+
+1. **Principe du moindre privilège** : toujours restreindre les flux réseau au minimum requis.
+2. **Segmentation stricte** : séparer environnements (prod, dev, test) avec des subnets distincts et des règles de filtrage claires.
+3. **Surveillance et audit** : activer la journalisation (ex. : AWS VPC Flow Logs, Azure NSG Flow Logs, GCP VPC Flow Logs) pour détection d’incidents et analyse post-incident.
+4. **Chiffrement bout en bout** : pour les connexions on-premise (VPN, Direct Connect, Interconnect), assurer un chiffrement robuste (IPsec, TLS).
+5. **WAF** : complément essentiel pour la protection applicative, surtout pour les services exposés publiquement.
+
+---
+
+✅ **En résumé** :
+Ces briques réseau cloud reproduisent les fonctions du réseau traditionnel (pare-feu, segmentation, liaisons dédiées) mais **exigent une gouvernance stricte** et une **surveillance continue**, car la **mauvaise configuration reste la première cause de brèche de sécurité** dans les environnements cloud.
+
