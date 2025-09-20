@@ -449,3 +449,56 @@ Voici un **résumé structuré** des **quatre rôles définis par NIST** dans l�
 * **Auditor** : contrôle la conformité.
 * **Broker** : conseille, intègre et optimise.
 
+---
+
+**NIST 500-292** est la norme intitulée **“NIST Cloud Computing Reference Architecture”** (Architecture de Référence du Cloud Computing) publiée par le **National Institute of Standards and Technology (NIST)**.
+Elle définit un **modèle de référence** décrivant les rôles, les composants et les interactions essentiels dans un environnement cloud.
+
+---
+
+## 🎯 Objectif
+
+Fournir une **vue normalisée** des services et acteurs du cloud afin d’aider :
+
+* les entreprises à comprendre les responsabilités,
+* les fournisseurs à décrire leurs services,
+* les auditeurs et régulateurs à évaluer la conformité et la sécurité.
+
+---
+
+## 🔑 Les cinq **rôles principaux** (Cloud Actors)
+
+| Rôle                                               | Description                                                                      | Responsabilités clés                                                                    |
+| -------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Cloud Consumer (Consommateur)**                  | Organisation ou individu qui utilise des services cloud (IaaS, PaaS, SaaS).      | Configure les services, gère les données, les identités et la conformité.               |
+| **Cloud Provider (Fournisseur de services cloud)** | Entité qui met à disposition l’infrastructure, les plateformes ou les logiciels. | Assure la disponibilité, la sécurité de l’infrastructure, le respect du SLA.            |
+| **Cloud Broker (Courtier cloud)**                  | Intermédiaire entre consommateur et fournisseur.                                 | Aide à choisir les services, optimise les coûts, gère l’interopérabilité multi-cloud.   |
+| **Cloud Auditor (Auditeur cloud)**                 | Tiers indépendant qui évalue la sécurité et la conformité.                       | Réalise des audits de sécurité, de performance et de conformité (ex. ISO 27001, SOC 2). |
+| **Cloud Carrier (Opérateur réseau)**               | Assure la connectivité entre le consommateur et le fournisseur.                  | Gère le transport des données (réseau, bande passante, interconnexions).                |
+
+---
+
+## 🏛️ Les trois couches de service
+
+Conformément à la même architecture, NIST 500-292 réaffirme les **modèles de service** :
+
+* **IaaS** (Infrastructure as a Service),
+* **PaaS** (Platform as a Service),
+* **SaaS** (Software as a Service).
+
+---
+
+## 🔐 Enjeux Sécurité (point de vue expert IT)
+
+* **Responsabilité partagée** : le document clarifie ce qui relève du fournisseur (sécurité physique, réseau, hyperviseur) et ce qui reste sous contrôle du consommateur (données, identités, configuration).
+* **Auditabilité** : l’auditeur indépendant est un pilier pour la conformité réglementaire (ISO, SOC, RGPD, HIPAA…).
+* **Interopérabilité** : le rôle du **cloud broker** et du **cloud carrier** est essentiel pour les environnements **multi-cloud ou hybrides**.
+
+---
+
+### 📎 Référence
+
+➡️ **Titre complet** : *NIST Special Publication 500-292: NIST Cloud Computing Reference Architecture*
+➡️ Première publication : **2011** (National Institute of Standards and Technology, États-Unis).
+
+En résumé, **NIST 500-292** est le cadre de référence officiel qui **structure l’écosystème cloud** autour de ces cinq rôles et clarifie les responsabilités et les interactions entre eux.
