@@ -858,3 +858,65 @@ Voici une **vue d’ensemble d’expert IT** sur ces **quatre technologies majeu
 ✅ **Résumé** :
 Pour un architecte sécurité, ces six aspects sont **critiques à intégrer dès la phase de conception** d’une stratégie cloud afin d’assurer **résilience, conformité et indépendance** vis-à-vis du fournisseur.
 
+---
+
+Parfait ! Voici une **proposition complète de tableau / matrice visuelle “Cloud Security & Architecture”**, regroupant tous les éléments que nous avons abordés. J’ai structuré le contenu pour qu’il soit **clair, hiérarchisé et orienté sécurité IT**.
+
+---
+
+## 🌐 Cloud Security & Architecture – Synthèse Expert IT
+
+| Catégorie                       | Élément                                             | Description / Fonction                                        | Modèle / Technologie           | Responsable principal / Remarques sécurité                                                      |
+| ------------------------------- | --------------------------------------------------- | ------------------------------------------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| **Cloud Types**                 | Public / Private / Hybrid / Community / Multi-cloud | Différents déploiements de cloud selon le contrôle et l’accès | SaaS, PaaS, IaaS               | Private = plus sécurisé ; Multi-cloud = gestion plus complexe, vigilance sur IAM et chiffrement |
+| **Service Models**              | IaaS                                                | Infra virtuelle, VMs, stockage, réseau                        | Compute, Storage, Networking   | Client : OS, apps, données. CSP : infra, hyperviseur, réseau                                    |
+|                                 | PaaS                                                | Plateforme pour développer et déployer apps                   | Runtime, DB, Middleware        | Client : apps et données. CSP : OS, middleware, infra                                           |
+|                                 | SaaS                                                | Logiciels accessibles via Internet                            | Apps managées                  | Client : comptes, accès, données. CSP : tout le reste                                           |
+| **Shared Responsibilities**     | Accounts & Access                                   | Gestion des utilisateurs et permissions                       | IAM                            | Consumer                                                                                        |
+|                                 | IAM                                                 | Authentification & contrôle d’accès                           | Role-based / policy            | Shared                                                                                          |
+|                                 | Data                                                | Gestion, chiffrement, sauvegardes                             | CMK / CPK                      | IaaS : Consumer ; PaaS/SaaS : Shared                                                            |
+|                                 | Infrastructure                                      | Sécurité physique et logique                                  | Servers, network, hypervisor   | CSP                                                                                             |
+|                                 | Application Security                                | Sécurisation applicative                                      | Code review, WAF               | IaaS/PaaS : Consumer ; SaaS : CSP                                                               |
+|                                 | OS & Hypervisor                                     | OS + hyperviseur                                              | VM, container host             | OS : Consumer (IaaS) / CSP (PaaS/SaaS) ; Hypervisor : CSP                                       |
+|                                 | Network                                             | Overlay/Underlay, virtual firewalls, WAF                      | VPC, NSG, Security Groups      | Shared / CSP selon niveau                                                                       |
+| **Networking**                  | Virtual Networks / Subnets                          | Segmentation logique du réseau                                | VPC, VNet                      | Consumer config, CSP infra                                                                      |
+|                                 | Virtual Firewalls / ACL                             | Contrôle du trafic réseau                                     | NACL, Security Groups          | Shared                                                                                          |
+|                                 | WAF                                                 | Protection application web                                    | AWS WAF, Azure WAF             | Shared                                                                                          |
+|                                 | vNIC                                                | Connectivité VM                                               | ENI, NIC                       | Consumer / CSP                                                                                  |
+|                                 | Direct connections                                  | Liaisons on-prem                                              | Direct Connect, ExpressRoute   | Shared                                                                                          |
+|                                 | Network Peering                                     | Connexion réseau privée                                       | VPC Peering                    | Shared                                                                                          |
+| **Storage**                     | Block Storage                                       | Disques virtuels attachés aux VMs                             | EBS, Managed Disks             | Consumer gère données et accès                                                                  |
+|                                 | File Storage                                        | Partage fichiers via NFS/SMB                                  | EFS, Azure Files               | Consumer IAM + CSP chiffrement                                                                  |
+|                                 | Object Storage                                      | Stockage massivement scalable via API                         | S3, Blob Storage               | Shared, chiffrement CMK/CPK                                                                     |
+| **Virtualization**              | Type-1                                              | Hyperviseur bare-metal                                        | ESXi, Hyper-V, KVM             | CSP, sécurité renforcée                                                                         |
+|                                 | Type-2                                              | Hyperviseur hosted                                            | VirtualBox, Workstation        | Consumer dépend de OS hôte                                                                      |
+| **Databases**                   | Managed DB                                          | DBaaS                                                         | RDS, Cloud SQL, Mongo Atlas    | CSP gère infra, Consumer gère accès et données                                                  |
+|                                 | Self-hosted DB                                      | DB sur VM / on-prem                                           | MySQL/PostgreSQL, Oracle       | Consumer gère tout, sécurité complète                                                           |
+| **Orchestration & IaC**         | IaC                                                 | Définition infra via code                                     | Terraform, CloudFormation      | Consumer : version control, review, secrets                                                     |
+|                                 | Orchestration                                       | Provisionnement et coordination                               | Kubernetes, Ansible, Jenkins   | Consumer : configuration & monitoring                                                           |
+| **Other Technologies**          | AI                                                  | Machine learning et modèles                                   | TensorFlow, AWS SageMaker      | Protection données, modèles, auditabilité                                                       |
+|                                 | IoT                                                 | Objets connectés                                              | Smart sensors, Edge devices    | Durcissement firmware, segmentation réseau                                                      |
+|                                 | DevSecOps                                           | Intégration sécurité dans DevOps                              | CI/CD pipelines                | Automatiser sécurité, scans vulnérabilités                                                      |
+|                                 | Containers                                          | Isolation légère d’applications                               | Docker, Kubernetes             | Sécuriser images, cluster, RBAC                                                                 |
+| **Cloud Shared Considerations** | Interoperability                                    | Standardisation et compatibilité                              | APIs, formats ouverts          | Vendor-neutral design, tests multi-cloud                                                        |
+|                                 | Portability                                         | Déplacement facile entre clouds                               | Containerisation, data formats | Eviter vendor lock-in                                                                           |
+|                                 | Reversibility                                       | Capacité à quitter le CSP                                     | Data export, SLA               | Tester procédures d’export                                                                      |
+|                                 | Availability                                        | SLA et résilience                                             | Multi-AZ, load balancing       | DRP, tolérance panne                                                                            |
+|                                 | Audibility                                          | Logs et contrôle                                              | CloudTrail, Monitor, SIEM      | Centraliser, audit régulier                                                                     |
+|                                 | Regulatory Compliance                               | Conformité légale                                             | RGPD, HIPAA, PCI-DSS           | Chiffrement, certifications, localisation                                                       |
+
+---
+
+### 🔑 Points clés
+
+1. **Responsabilité partagée** : CSP et Consumer doivent collaborer sur la sécurité, surtout pour les données et IAM.
+2. **Automatisation & Orchestration** : IaC et containers permettent sécurité et cohérence à grande échelle.
+3. **Technologies émergentes** : DevSecOps, AI, IoT nécessitent intégration continue de la sécurité.
+4. **Cloud considerations** : Interopérabilité, portabilité, reversibilité et compliance sont critiques pour la gouvernance et la résilience.
+
+---
+
+Si vous voulez, je peux maintenant **transformer ce tableau en diagramme graphique coloré**, avec **zones CSP / Consumer / Shared colorées**, **icônes pour stockage, networking, containers**, et une **vue synthétique prête à présenter** pour formation ou documentation.
+
+Voulez que je fasse cette version graphique ?
+
