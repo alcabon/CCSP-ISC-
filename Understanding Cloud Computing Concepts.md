@@ -534,3 +534,45 @@ Voici une **synthèse structurée des principaux composants de mise en réseau d
 ✅ **En résumé** :
 Ces briques réseau cloud reproduisent les fonctions du réseau traditionnel (pare-feu, segmentation, liaisons dédiées) mais **exigent une gouvernance stricte** et une **surveillance continue**, car la **mauvaise configuration reste la première cause de brèche de sécurité** dans les environnements cloud.
 
+---
+
+Voici une **synthèse claire** des **trois grands types de stockage cloud** — *block*, *file* et *object* — avec une **vue d’expert IT sécurité** :
+
+---
+
+| Type de stockage                        | Description                                                                                                         | Cas d’usage typiques                                                                                                   | Exemples de services cloud                                               | Points clés de sécurité                                                                                                                                                                                                 |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Block Storage** (stockage en blocs)   | Données découpées en blocs de taille fixe, présentées comme un disque dur virtuel attaché à une machine virtuelle.  | Bases de données transactionnelles, systèmes d’exploitation, applications nécessitant des I/O rapides et prédictibles. | **AWS** : EBS<br>**Azure** : Managed Disks<br>**GCP** : Persistent Disks | - Chiffrement au repos (par ex. KMS/CMK).<br>- Sauvegardes régulières (snapshots).<br>- Contrôler les accès IAM au niveau de l’instance.                                                                                |
+| **File Storage** (stockage de fichiers) | Système de fichiers partagé accessible via protocoles standards (NFS, SMB/CIFS).                                    | Partage de fichiers, serveurs de contenu, environnements collaboratifs.                                                | **AWS** : EFS<br>**Azure** : Azure Files<br>**GCP** : Filestore          | - Gérer les permissions par ACL/permissions POSIX.<br>- Activer le chiffrement en transit (SMB 3.0, TLS).<br>- Surveiller les accès (logs).                                                                             |
+| **Object Storage** (stockage d’objets)  | Données stockées sous forme d’objets avec métadonnées et identifiant unique, accessibles via HTTP/HTTPS (API REST). | Sauvegardes, données non structurées (images, vidéos, logs), Data Lake, CDN.                                           | **AWS** : S3<br>**Azure** : Blob Storage<br>**GCP** : Cloud Storage      | - Configurer des politiques de contrôle d’accès (IAM ou bucket policies).<br>- Chiffrement côté serveur (SSE) ou côté client (CMK/CPK).<br>- Protéger contre l’exposition publique accidentelle (ex. S3 bucket public). |
+
+---
+
+### 🔑 Comparaison rapide
+
+| Critère             | Block                       | File                            | Object                  |
+| ------------------- | --------------------------- | ------------------------------- | ----------------------- |
+| **Performance I/O** | Très élevée, faible latence | Moyenne                         | Variable selon API      |
+| **Structure**       | Blocs adressables           | Hiérarchie de fichiers/dossiers | Objets avec métadonnées |
+| **Protocoles**      | iSCSI, NVMe                 | NFS, SMB                        | HTTP/HTTPS (REST)       |
+| **Élasticité**      | Taille fixe à l’allocation  | Taille fixe mais extensible     | Très hautement scalable |
+
+---
+
+### 🛡️ Recommandations d’expert sécurité
+
+1. **Chiffrement systématique** : au repos (KMS, CMK, CPK) et en transit (TLS/HTTPS).
+2. **IAM granulaire** : appliquer le principe du moindre privilège (ex. policies S3, permissions POSIX).
+3. **Surveillance continue** : activer logs d’accès (S3 Access Logs, Azure Storage Analytics, GCP Audit Logs).
+4. **Contrôle de l’exposition publique** : particulièrement critique pour l’Object Storage.
+5. **Gestion des snapshots et backups** : protéger les sauvegardes avec la même rigueur que les données sources.
+
+---
+
+✅ **Résumé**
+
+* **Block** = disque virtuel haute performance pour applications critiques.
+* **File** = partage de fichiers multi-VM via protocoles standards.
+* **Object** = stockage massivement scalable pour données non structurées et accès via API.
+  ➡️ Le choix dépend des besoins de **performance, scalabilité et type d’accès**, mais **les bonnes pratiques de chiffrement et d’IAM restent transverses**.
+
