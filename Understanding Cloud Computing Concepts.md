@@ -363,3 +363,51 @@ Parfait ! Voici une **proposition graphique sous forme de matrice visuelle**, co
 Si vous voulez, je peux également créer une **vraie image graphique style diagramme**, avec **couleurs, icônes cloud et flèches** pour rendre cette matrice **visuellement prête à présenter** dans une formation ou un guide IT.
 
 Voulez que je fasse cette version image ?
+
+---
+
+Parfait ! Intégrons ces **exemples concrets de sécurité** dans le cadre du **modèle de responsabilité partagée**, pour rendre le tableau plus précis et pratique pour un consultant IT.
+
+---
+
+### 1️⃣ **Chiffrement avec clé client (CMK/CPK)**
+
+| Concept                                          | IaaS | PaaS | SaaS | Responsable principal                                 | Remarques expert                                                                                                                                                                                      |
+| ------------------------------------------------ | ---- | ---- | ---- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Chiffrement avec Customer Managed Key (CMK)**  | 🟩   | 🟨   | 🟨   | Client (gestion clé), CSP (mise en œuvre chiffrement) | Dans IaaS, le client peut créer et gérer ses clés pour ses volumes, buckets, bases de données. Dans PaaS/SaaS, le CSP supporte le chiffrement mais le client peut fournir/contrôler la clé (CMK/CPK). |
+| **Chiffrement avec Customer Provided Key (CPK)** | 🟩   | 🟨   | 🟨   | Client (fournit clé), CSP (utilise clé)               | CPK = le client fournit la clé au fournisseur pour le chiffrement des données au repos. La responsabilité de la protection de la clé hors du cloud reste client.                                      |
+
+**Remarque :**
+
+* Le **client est toujours responsable de la protection et rotation de la clé**.
+* Le CSP garantit la mise en œuvre technique du chiffrement et le stockage sécurisé selon le contrat.
+
+---
+
+### 2️⃣ **Protection contre les attaques DoS / DDoS**
+
+| Concept                 | IaaS | PaaS | SaaS    | Responsable principal                                            | Remarques expert                                                                                                                                                                                           |
+| ----------------------- | ---- | ---- | ------- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Attaques DoS / DDoS** | 🟨   | 🟨   | 🟦 / 🟨 | CSP (infrastructure, mitigation), Client (applications exposées) | CSP protège l’infrastructure (réseau, serveurs, load balancers). Le client doit architecturer ses applications pour tolérer les pics et implémenter des protections côté application (rate limiting, WAF). |
+| **Mitigation avancée**  | 🟦   | 🟦   | 🟦      | CSP                                                              | Services comme AWS Shield, Azure DDoS Protection, GCP Cloud Armor : le fournisseur fournit la protection réseau et infrastructurelle, mais le client doit configurer correctement les règles.              |
+
+**Remarque :**
+
+* Pour IaaS/PaaS, **la responsabilité est partagée** : CSP sécurise le réseau et la plateforme, client sécurise l’application.
+* Pour SaaS, CSP prend la quasi-totalité de la responsabilité sur DoS au niveau service et infra.
+
+---
+
+### ✅ Synthèse experte
+
+1. **Chiffrement (CMK/CPK)** → la responsabilité du client est sur **la clé, sa rotation, et son stockage**, CSP implémente le mécanisme.
+2. **DoS/DDoS** → CSP protège **l’infrastructure et le réseau**, mais le client doit sécuriser l’application et la logique métier pour limiter l’impact.
+3. **IaaS** → responsabilité client maximale (OS, apps, données).
+4. **PaaS** → responsabilité client sur apps et données, CSP sur OS et infra.
+5. **SaaS** → responsabilité client limitée aux comptes, accès et données.
+
+---
+
+Si vous voulez, je peux **mettre à jour la matrice graphique précédente** en intégrant ces **exemples CMK/CPK et DoS/DDoS**, codés par couleur CSP / Client / Shared, pour avoir un **tableau complet de responsabilité pratique et visuel**.
+
+Voulez que je fasse cette version ?
